@@ -4,6 +4,7 @@ cc_library(
     hdrs = [ "@libfst//:all_h",],
     deps = [
         "//third_party/libjudy",
+        "@zlib//:zlib",
     ],
     defines = [
         'FST_CONFIG_INCLUDE=\\"third_party/libfst/config.h\\"',
