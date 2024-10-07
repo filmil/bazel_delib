@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "c4go_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/filmil/bazel_delib/c4go",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_xlab_c_for_go//:c-for-go"],
+)
+
+go_binary(
+    name = "c4go",
+    embed = [":c4go_lib"],
+    visibility = ["//visibility:public"],
+)
