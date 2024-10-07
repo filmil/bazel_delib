@@ -4,7 +4,7 @@ go_library(
     name = "test_lib",
     srcs = ["main.go"],
     # XXX: edit
-    importpath = "github.com/filmil/bazel-go-basic/test",
+    importpath = "github.com/filmil/bazel_delib/test",
     visibility = ["//visibility:private"],
 )
 
