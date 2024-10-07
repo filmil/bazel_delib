@@ -1,0 +1,17 @@
+filegroup(
+  name = "all_c",
+  srcs = glob(
+    include = ["lib/libfst/*.c"],
+    exclude = ["*.bazel"],
+  ),
+  visibility = ["//visibility:public"],
+)
+
+filegroup(
+  name = "all_h",
+  srcs = glob(
+    include = ["lib/libfst/*.h"],
+    exclude = ["*.bazel"],
+  ),
+  visibility = ["//visibility:public"],
+)

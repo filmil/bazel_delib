@@ -1,0 +1,19 @@
+cc_library(
+    name = "libfst",
+    srcs = [ "@libfst//:all_c"],
+    hdrs = [ "@libfst//:all_h",],
+    deps = [
+        "//third_party/libjudy",
+    ],
+    defines = [
+        'FST_CONFIG_INCLUDE=\\"third_party/libfst/config.h\\"',
+    ],
+    additional_compiler_inputs = [
+        ":config",
+    ]
+)
+
+filegroup(
+    name = "config",
+    srcs = [ "config.h" ],
+)

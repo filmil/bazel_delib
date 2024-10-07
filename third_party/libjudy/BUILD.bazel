@@ -1,0 +1,14 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "configure_make")
+
+configure_make(
+  name = "libjudy",
+  lib_source = "@libjudy//:all_srcs",
+  visibility = ["//visibility:public"],
+  targets = [ "all", "install"],
+  autoreconf = True,
+  autoreconf_options = [ "--install", ],
+  # Some genius decided to use mixed case here.
+  lib_name = "libJudy",
+  configure_in_place = True,
+)
+
